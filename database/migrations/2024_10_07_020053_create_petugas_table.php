@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('Id',16)->primary();
             $table->string('Nama',45);
             $table->string('Email')->unique();
-            $table->string('Password', 13);
-            $table->string('Telp');
+            $table->string('Password', 13)->nullable();
+            $table->string('Telp')->nullable();
             $table->enum('Level',['active','inactive','pending']);
             $table->timestamps(); 
         });

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date('Tanggal Pengaduan');
             $table->char('NIK, 16')->primary;
             $table->text('Laporan');
-            $table->string('Foto Path');
+            $table->string('Foto Path')->nullable();
             $table->enum('Status', ['active','inactive','pending']);
         });
     }
