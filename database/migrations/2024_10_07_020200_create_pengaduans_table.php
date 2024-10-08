@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('pengaduans', function (Blueprint $table) {
+            $table->integer('Id');
+            $table->date('Tanggal Pengaduan');
+            $table->char('NIK, 16')->primary;
+            $table->text('Laporan');
+            $table->string('Foto Path');
+            $table->enum('Status', ['active','inactive','pending']);
         });
     }
 
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('pengaduans');
     }
 };

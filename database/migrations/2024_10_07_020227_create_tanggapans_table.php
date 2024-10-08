@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('laporans', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('Id');
+            $table->integer('Id Pengaduan');
+            $table->date('Tanggal Tanggapan');
+            $table->text('Tanggapan');
+            $table->string('Id Petugas');
+            $table->enum('Level', ['0','inactive', 'pending']);
         });
     }
 
