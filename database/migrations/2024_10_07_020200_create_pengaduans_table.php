@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('pengaduans', function (Blueprint $table) {
             $table->integer('Id');
-            $table->date('Tanggal Pengaduan');
+            $table->date('Tanggal Pengaduan')->nullable();
             $table->char('NIK, 16')->primary;
-            $table->text('Laporan');
+            $table->text('Laporan')->nullable();
             $table->string('Foto Path')->nullable();
             $table->enum('Status', ['active','inactive','pending']);
         });

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->integer('Id')->primary();
             $table->integer('Id Pengaduan')->unique();
             $table->date('Tanggal Tanggapan');
-            $table->text('Tanggapan');
-            $table->string('Id Petugas');
+            $table->text('Tanggapan')->nullable();
+            $table->string('Id Petugas')->nullable();
             $table->enum('Level', ['0','inactive', 'pending']);
         });
     }
