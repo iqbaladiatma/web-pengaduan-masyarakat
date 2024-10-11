@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pengaduans', function (Blueprint $table) {
-            $table->integer('Id');
+            $table->id('Id');
             $table->date('Tanggal Pengaduan')->nullable();
-            $table->char('NIK, 16')->primary;
+            $table->char('NIK, 16');
             $table->text('Laporan')->nullable();
             $table->string('Foto Path')->nullable();
-            $table->enum('Status', ['active','inactive','pending']);
+            $table->enum('Status', ['0','proses','Selesai']);
         });
     }
 
