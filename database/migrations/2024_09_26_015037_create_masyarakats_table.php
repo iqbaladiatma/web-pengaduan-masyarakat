@@ -15,8 +15,9 @@ return new class extends Migration
             $table->char('NIK',16)->primary();
             $table->string('Nama', 45);
             $table->string('Email')->unique();
+            $table->dateTime('Email_verified_at')->nullable();
             $table->string('Username', 25)->unique();
-            $table->string('Password')->nullable(); //
+            $table->string('Password')->nullable();
             $table->string('Telp')->nullable();
         });
     }

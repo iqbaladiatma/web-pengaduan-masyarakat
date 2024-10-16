@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('laporans', function (Blueprint $table) {
-            $table->id('Id');
-            $table->id('Id Pengaduan')->unique();
+            $table->id('Id'); 
+            $table->unsignedBigInteger('Id Pengaduan')->unique(); // Use unsignedBigInteger for 'Id Pengaduan'
             $table->date('Tanggal Tanggapan');
             $table->text('Tanggapan')->nullable();
             $table->string('Id Petugas')->nullable();
-            $table->enum('Level', ['0','pending', 'selesai']);
+            $table->enum('Level', ['0', 'pending', 'selesai']);
         });
     }
 
